@@ -3,7 +3,7 @@
 
 ## Installation:
 Require this package with composer using the following command:
-
+s
 ```sh
 composer require g4t/laravel-sas3-radius
 ```
