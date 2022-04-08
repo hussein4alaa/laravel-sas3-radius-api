@@ -1,0 +1,19 @@
+{
+    "name": "g4t/laravel-sas3-radius",
+    "description": "package to integration with sas3 radius.",
+    "authors": [
+        {
+            "name": "HusseinAlaa",
+            "email": "hussein4alaa@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "g4t\\Sas3\\": "src/"
+        }
+    }
+}
