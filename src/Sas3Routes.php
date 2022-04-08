@@ -52,5 +52,4 @@ class Sas3Routes
 
     public const PROFILES = '/index.php/profiles/list';
 
-
 }

@@ -7,6 +7,7 @@ trait Export
 
     /**
      * export all users as @CSV file.
+     * @param null $name
      * @return string
      */
     public function export($name = null): string
@@ -20,6 +21,7 @@ trait Export
     /**
      * create @CSV file.
      * @param $users
+     * @param $name
      * @return string
      */
     public function csv($users, $name): string

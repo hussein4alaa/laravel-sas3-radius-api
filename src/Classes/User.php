@@ -6,7 +6,9 @@ trait User
 {
 
     /**
-     * get users list.
+     * Users List.
+     *
+     * @return mixed
      */
     public function users()
     {
@@ -30,8 +32,12 @@ trait User
     }
 
 
-
-
+    /**
+     * Delete Users.
+     *
+     * @param $users
+     * @return mixed
+     */
     public function deleteUsers($users)
     {
         $ids = [
@@ -40,18 +46,37 @@ trait User
         return $this->post($this->delete_users, $ids);
     }
 
+
+    /**
+     * Add User.
+     *
+     * @param $data
+     * @return mixed
+     */
     public function addUser($data)
     {
         return $this->post($this->add_user, $data);
     }
 
-
+    /**
+     * Update User.
+     *
+     * @param $data
+     * @return mixed
+     */
     public function updateUser($data)
     {
         return $this->post($this->update_user, $data);
     }
 
 
+    /**
+     * Change Profile.
+     *
+     * @param $username
+     * @param $newsrvid
+     * @return mixed
+     */
     public function changeProfile($username, $newsrvid)
     {
         return $this->post($this->change_profile, [
@@ -61,6 +86,13 @@ trait User
     }
 
 
+    /**
+     * Rename User.
+     *
+     * @param $username
+     * @param $newusername
+     * @return mixed
+     */
     public function renameUser($username, $newusername)
     {
         return $this->post($this->rename_user, [
@@ -70,9 +102,10 @@ trait User
     }
 
 
-
     /**
-     * get online users list.
+     * Online Users.
+     *
+     * @return mixed
      */
     public function online()
     {
@@ -98,7 +131,12 @@ trait User
     }
 
 
-
+    /**
+     * Disconnect User.
+     *
+     * @param $username
+     * @return mixed
+     */
     public function disconnect($username)
     {
         return $this->post($this->disconnect, ['username' => $username]);

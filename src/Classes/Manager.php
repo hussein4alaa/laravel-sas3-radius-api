@@ -2,11 +2,16 @@
 
 namespace g4t\Sas3\Classes;
 
+
 trait Manager
 {
 
 
-
+    /**
+     * Managers List.
+     *
+     * @return mixed
+     */
     public function managers()
     {
         $count = $this->paginate == true ? 10 : 100000000;
@@ -29,6 +34,12 @@ trait Manager
     }
 
 
+    /**
+     * get manager by id.
+     *
+     * @param $manager_id
+     * @return mixed|void
+     */
     public function manager($manager_id)
     {
         try {
@@ -38,12 +49,24 @@ trait Manager
         }
     }
 
+    /**
+     * Create Manager.
+     *
+     * @param $data
+     * @return mixed
+     */
     public function addManager($data)
     {
         return $this->post($this->add_manager, $data);
     }
 
 
+    /**
+     * Delete Manager.
+     *
+     * @param $managers
+     * @return mixed
+     */
     public function deleteManagers($managers)
     {
         $ids = [
@@ -53,6 +76,12 @@ trait Manager
     }
 
 
+    /**
+     * Update Manager.
+     *
+     * @param $data
+     * @return mixed
+     */
     public function updateManager($data)
     {
         return $this->post($this->update_managers, $data);

@@ -11,7 +11,6 @@ trait Auth
      * login to sas3 function.
      * @return void
      */
-
     public function login(): void
     {
         $response = Http::post($this->url . $this->login, [
@@ -23,6 +22,8 @@ trait Auth
         $cookie = $response->header('Set-Cookie');
         $this->getCSRF($cookie);
     }
+
+
 
     /**
      * get csrf token.

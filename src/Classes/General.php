@@ -8,7 +8,6 @@ trait General {
 
     /**
      * get company information.
-     * @param array $params
      * @return array
      */
     public function company()
@@ -17,11 +16,11 @@ trait General {
     }
 
 
-
     /**
      * send post request to sas3.
-     * @param array $params
      * @param $url
+     * @param array $params
+     * @return mixed
      */
     public function post($url, array $params = [])
     {
@@ -33,9 +32,14 @@ trait General {
     }
 
 
-
-
-    public function get($url, $params = [])
+    /**
+     * get function.
+     *
+     * @param $url
+     * @param array $params
+     * @return mixed
+     */
+    public function get($url, array $params = [])
     {
         $response = Http::withHeaders([
             'Cookie' => $this->cookie,

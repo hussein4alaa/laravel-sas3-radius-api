@@ -1,15 +1,6 @@
 <?php
 
-namespace g4t\Sas3;
-
-use g4t\Sas3\Classes\Auth;
-use g4t\Sas3\Classes\Credit;
-use g4t\Sas3\Classes\Links;
-use g4t\Sas3\Classes\Manager;
-use g4t\Sas3\Classes\Profile;
-use g4t\Sas3\Classes\User;
-use g4t\Sas3\Classes\Export;
-use g4t\Sas3\Classes\General;
+namespace g4t\Sas3\Classes;
 
 
 class Sas3
@@ -91,23 +82,32 @@ class Sas3
 
     /**
      * static function to pass data to construct.
-     * @var url
-     * @var username
-     * @var password
+     *
+     * @param $url
+     * @param $username
+     * @param $password
      */
     public static function connect($url, $username, $password)
     {
         return new static($url, $username, $password);
     }
 
-
-    public function search($search = '')
+    /**
+     * search in users & profiles & managers.
+     *
+     * @return Sas3
+     * @var string $search
+     */
+    public function search(string $search = '')
     {
         $this->search = $search;
         return $this;
     }
 
-
+    /**
+     * static function to pass data to construct.
+     * @var string $search
+     */
     public function showsub()
     {
         $this->showsub = 1;
