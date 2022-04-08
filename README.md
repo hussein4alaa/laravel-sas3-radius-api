@@ -12,7 +12,7 @@ composer require g4t/laravel-sas3-radius
 ## Usage
 ##### You have examples in repository in folder `examples`
 
-######Users List
+###### Users List
 ```shell
 Sas3::connect($url, $username, $password)
     ->users()
@@ -21,7 +21,7 @@ Sas3::connect($url, $username, $password)
     ->paginate('page_number');
 ```
 
-######Add User
+###### Add User
 ```shell
 Sas3::connect($url, $username, $password)
             ->addUser([
@@ -38,7 +38,7 @@ Sas3::connect($url, $username, $password)
 ```
 
 
-######Update User
+###### Update User
 ```sh
 Sas3::connect($url, $username, $password)
             ->updateUser([
@@ -101,39 +101,39 @@ Sas3::connect($url, $username, $password)
             ]);
 ```
 
-######Delete User
+###### Delete User
 ```sh
 Sas3::connect($url, $username, $password)->deleteUsers(['user@test']);
 ```
 
-######Rename User
+###### Rename User
 ```sh
 Sas3::connect($url, $username, $password)->renameUser('old_name@user', 'new_name@user');
 ```
 
-######Change User Profile
+###### Change User Profile
 ```sh
 Sas3::connect($url, $username, $password)->changeProfile('name@user', new_profile_id);
 ```
 
 
-######Active user by credit
+###### Active user by credit
 ```shell
 Sas3::connect($url, $username, $password)->activeCredit('user@name');
 ```
 
-######Active user by Test
+###### Active user by Test
 ```shell
 Sas3::connect($url, $username, $password)->activeTest('user@name');
 ```
 
-######Show single user by username
+###### Show single user by username
 ```shell
 Sas3::connect($url, $username, $password)->user('user@name');
 ```
 
 
-######Export Users as `CSV`
+###### Export Users as `CSV`
 ```sh
 use g4t\sas3\sas3;
 .
@@ -147,7 +147,7 @@ Sas3::connect($url, $username, $password)
 ```
 
 
-######Online Users List
+###### Online Users List
 ```sh
 Sas3::connect($url, $username, $password)
             ->online()
@@ -157,13 +157,13 @@ Sas3::connect($url, $username, $password)
 ```
 
 
-######Get Profiles List
+###### Get Profiles List
 ```sh
 Sas3::connect($url, $username, $password)->profiles();
 ```
 
 
-######Managers List
+###### Managers List
 ```shell
 Sas3::connect($url, $username, $password)
     ->managers()
@@ -172,12 +172,12 @@ Sas3::connect($url, $username, $password)
     ->paginate('page_number');
 ```
 
-######Show manager by id
+###### Show manager by id
 ```shell
 Sas3::connect($url, $username, $password)->manager('manager_id');
 ```
 
-######Create Manager
+###### Create Manager
 ```shell
 Sas3::connect($url, $username, $password)
             ->addManager([
@@ -199,7 +199,7 @@ Sas3::connect($url, $username, $password)
             ]);
 ```
 
-######Update Manager
+###### Update Manager
 ```shell
 Sas3::connect($url, $username, $password)
             ->updateManager([
@@ -235,31 +235,31 @@ Sas3::connect($url, $username, $password)
 ```
 
 
-######Delete Managers
+###### Delete Managers
 ```shell
 Sas3::connect($url, $username, $password)->deleteManagers(['manager_id', 'another manager_id']);
 ```
 
 
 
-######Withdrawing the Credit from the manager
+###### Withdrawing the Credit from the manager
 ```shell
 Sas3::connect($url, $username, $password)->reduceCredit('test_amount', 'manager_id');
 ```
 
-######Add Credit to manager
+###### Add Credit to manager
 ```shell
 Sas3::connect($url, $username, $password)->depostCredit('test_amount', 'manager_id', 'comment');
 ```
 
 
-######Withdrawing the tests from the manager
+###### Withdrawing the tests from the manager
 ```shell
 Sas3::connect($url, $username, $password)->reduceTrial('test_amount', 'manager_id');
 ```
 
 
-######Add test to manager
+###### Add test to manager
 ```shell
 Sas3::connect($url, $username, $password)->depostTrial('test_amount', 'manager_id');
 ```
