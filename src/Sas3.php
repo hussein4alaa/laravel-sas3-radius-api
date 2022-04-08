@@ -1,7 +1,16 @@
 <?php
 
-namespace g4t\Sas3\Classes;
+namespace g4t\Sas3;
 
+
+use g4t\Sas3\Classes\Auth;
+use g4t\Sas3\Classes\Credit;
+use g4t\Sas3\Classes\Export;
+use g4t\Sas3\Classes\General;
+use g4t\Sas3\Classes\Links;
+use g4t\Sas3\Classes\Manager;
+use g4t\Sas3\Classes\Profile;
+use g4t\Sas3\Classes\User;
 
 class Sas3
 {
