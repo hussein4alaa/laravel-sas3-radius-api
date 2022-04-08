@@ -45,7 +45,7 @@ class Examples
 
         // Change Profile
         return Sas3::connect($url, $username, $password)
-            ->changeProfile('aa@aas222', 41);
+            ->changeProfile('user', 'profile_id');
 
 
 
@@ -53,29 +53,29 @@ class Examples
         // Update User
         return Sas3::connect($url, $username, $password)
             ->updateUser([
-                "username" => "aa@aa",
-                "address" => "",
-                "city" => "baghdad",
-                "comment" => "iz0ne",
+                "username" => "aa@aa",                  # username
+                "address" => "11",                      # address
+                "city" => "baghdad",                    # city
+                "comment" => "comment",                 #comment
                 "warning_notified" => "0",
-                "country" => "Iraq",
+                "country" => "Iraq",                    # country
                 "contractid" => "",
                 "createdon" => "2021-09-18",
                 "downlimit" => 0,
                 "comblimit" => "0",
-                "email" => "",
+                "email" => "",                          # email address
                 "ipv6prefix" => "",
-                "enableuser" => "1",
-                "expiration" => "2023-04-07 09:00:00",
-                "nationalid" => null,
-                "firstname" => "عباس عدنان",
+                "enableuser" => "1",                    # enable OR desabler
+                "expiration" => "2023-04-07 09:00:00",  # expire date
+                "nationalid" => null,           # natonal id
+                "firstname" => "Hussein Alaa",    # first name
                 "lastname" => "",
-                "mac" => "",
+                "mac" => "",            # mac address
                 "usemacauth" => "0",
-                "mobile" => "",
-                "image" => null,
-                "owner" => "1",
-                "srvid" => "41", // profile id
+                "mobile" => "",         # mobile number
+                "image" => null,        # image
+                "owner" => "1",         # owner id
+                "srvid" => "41",        # profile id
                 "staticipcpe" => "",
                 "mt_filter_id" => "",
                 "uplimit" => 0,
@@ -129,18 +129,18 @@ class Examples
 
         // Active Credit
         return Sas3::connect($url, $username, $password)
-            ->activeCredit('ff');
+            ->activeCredit('user');
 
 
         // Active Test
         return Sas3::connect($url, $username, $password)
-            ->activeTest('h3');
+            ->activeTest('user');
 
 
 
         // Single User
         return Sas3::connect($url, $username, $password)
-            ->user('h4');
+            ->user('user');
 
 
 
@@ -157,7 +157,7 @@ class Examples
                 "debt_limit" => "0.00",
                 "company" => "",
                 "email" => "hussein4alaa@gmail.com",
-                "phone" => "07735683256",
+                "phone" => "07700000000",
                 "country" => "Iraq",
                 "city" => "baghdad",
                 "image" => null,
@@ -180,7 +180,7 @@ class Examples
 
         // Delete Managers
         return Sas3::connect($url, $username, $password)
-            ->deleteManagers([4]);
+            ->deleteManagers(['manager_id', 'another_manager_id']);
 
 
         // Add Manager
@@ -206,47 +206,47 @@ class Examples
 
         // remove Credit
         return Sas3::connect($url, $username, $password)
-            ->reduceCredit(100, 1);
+            ->reduceCredit('credit_amount', 'manager_id');
 
 
         // Add Credit
         return Sas3::connect($url, $username, $password)
-            ->depostCredit(200, 1, 'fuck');
+            ->depostCredit('credit_amount', 'manager_id', 'comment');
 
 
         // Manager By ID
         return Sas3::connect($url, $username, $password)
-            ->manager(1);
+            ->manager('manager_id');
 
 
 
         // Managers List
         return Sas3::connect($url, $username, $password)
             ->managers()
-            ->search('admin')
+            ->search()
             ->showsub()
-            ->paginate(1);
+            ->paginate('page_number');
 
 
         // remove Tests
         return Sas3::connect($url, $username, $password)
-            ->reduceTrial(100, 1);
+            ->reduceTrial('test_amount', 'manager_id');
 
 
         // Add Tests
         return Sas3::connect($url, $username, $password)
-            ->depostTrial(220, 1);
+            ->depostTrial('test_amount', 'manager_id');
 
 
         // Delete Users
         return Sas3::connect($url, $username, $password)
-            ->deleteUsers(['hus56@56']);
+            ->deleteUsers(['user', 'another_user']);
 
 
         // Users List
         return Sas3::connect($url, $username, $password)
             ->users()
-            ->search('admin')
+            ->search()
             ->showsub()
             ->paginate(1);
     }
