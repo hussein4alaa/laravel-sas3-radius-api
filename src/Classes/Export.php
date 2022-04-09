@@ -26,7 +26,11 @@ trait Export
      */
     public function csv($users, $name): string
     {
-        $file_name = is_null($name) ? 'users/sas3/users_' . rand() . '.csv' : 'users/sas3/'.$name.'.csv';
+        $path = public_path('users');
+        if (!file_exists($path)) {
+            mkdir($path);
+        }
+        $file_name = is_null($name) ? 'users/sas3_users_' . rand() . '.csv' : 'users/'.$name.'.csv';
         $columns = array('Username', 'First Name', 'Last Name', 'Expiration', 'Parent', 'Profile', 'Pass');
         $file = fopen($file_name, 'w');
         fputcsv($file, $columns);
