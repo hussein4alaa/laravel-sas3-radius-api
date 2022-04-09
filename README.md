@@ -274,5 +274,5 @@ Sas3::connect($url, $username, $password)->depostTrial('test_amount', 'manager_i
 
 ### License
 
-Laravel Design Pattern Generator is free software licensed under the MIT license.
+laravel sas3 radius is free software licensed under the MIT license.
 
