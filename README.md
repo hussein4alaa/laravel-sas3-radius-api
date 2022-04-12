@@ -139,7 +139,7 @@ Sas3::connect($url, $username, $password)->user('user@name');
 
 ###### Export Users as `CSV`
 ```sh
-use g4t\sas3\sas3;
+use g4t\Sas3\Sas3;
 .
 .
 $url = 'http://192.168.200.3';
