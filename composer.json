@@ -7,6 +7,7 @@
             "email": "hussein4alaa@gmail.com"
         }
     ],
+    "license": "MIT",
     "minimum-stability": "stable",
     "require": {
         "guzzlehttp/guzzle": "^6.3"
